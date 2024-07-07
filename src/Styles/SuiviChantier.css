@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-image: url(../Assets/chantierphoto.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+   /*  width:100%;
+    height: 1000px; */
+}
+
+#formulaire-chantier {
+    display: flex;
+    justify-self: center ;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 3, 0.538);
+    margin: 200px 0px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.connexion {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label {
+    color: white;
+    font-size: 12px;
+}
+
+.button {
+    margin-top: 10px ;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(34, 31, 31);
+}

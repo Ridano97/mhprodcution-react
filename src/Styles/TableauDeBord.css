@@ -1,0 +1,168 @@
+ #etat {
+    margin-left: 60px;
+    color: green;
+}
+
+#titre-tableaudebord {
+    margin-bottom: 100px;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+h3 { 
+    color: white;
+}
+
+#block-crud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+.block-conteneur-crud {
+    width: 33.33%;
+    background: linear-gradient( rgb(255, 89, 89), rgb(250, 207, 126));
+    margin: 5px;
+    border-radius: 10px;
+    height: 150px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.block-conteneur-crud:nth-child(2) {
+    width: 33.33%;
+    background: linear-gradient(rgb(131, 243, 131), rgb(225, 225, 39));
+    margin: 5px;
+    border-radius: 10px;
+    height: 150px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.block-conteneur-crud:nth-child(4) {
+    width: 33.33%;
+    background: linear-gradient(rgb(255, 150, 255), rgb(246, 128, 108));
+    margin: 5px;
+    border-radius: 10px;
+    height: 150px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.block-conteneur-crud:nth-child(3) {
+    width: 33.33%;
+    background: linear-gradient(rgb(57, 43, 255),rgb(133, 133, 248));
+    margin: 5px;
+    border-radius: 10px;
+    height: 150px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.block-conteneur-crud:hover {
+    cursor: pointer;
+    height: 155px;
+    width: 350px;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+}
+
+#block-nb-entreprise {
+    max-width: 500px;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    background: linear-gradient(black, gray);
+    border-radius: 50px;
+}
+
+#block-conteneur-formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.block-crud-formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    background: linear-gradient( rgb(255, 89, 89), rgb(250, 207, 126));
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.designation-champ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.block-crud-formulaire:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    background: linear-gradient(rgb(131, 243, 131), rgb(225, 225, 39));
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.block-crud-formulaire:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    background: linear-gradient(rgb(57, 43, 255),rgb(133, 133, 248));
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.block-crud-formulaire:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    background: linear-gradient(rgb(255, 150, 255), rgb(246, 128, 108));
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h4 {
+    color: white;
+}
+
+.button-formulaire {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+.button-formulaire:hover {
+    padding: 5px 15px;
+    background-color: rgb(47, 44, 44);
+    cursor: pointer;
+}

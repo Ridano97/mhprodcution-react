@@ -22,12 +22,14 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <ul id='conteneur-liste-footer'>
-                    <a href='' target=''><li>Mention légales</li></a>
-                    <a href='' target=''><li>Politique de confidentialité</li></a>
-                    <a href='' target=''><li>Gestion des cookies</li></a>
-                    <a href='' target=''><li>Contact</li></a>
-                </ul>
+                <nav className='stroke'>
+                    <ul id='conteneur-liste-footer'>
+                        <li><a href='' target=''>Mention légales</a></li>
+                        <li><a href='' target=''>Politique de confidentialité</a></li>
+                        <li><a href='' target=''>Gestion des cookies</a></li>
+                        <li><a href='' target=''>Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </footer>

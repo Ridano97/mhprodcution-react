@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../Components/NavBar';
 import '../Styles/TableauDeBord.css'
 import Footer from '../Components/Footer';
+import AdministrateurService from '../Services/AdministrateurService';
+import EntrepriseService from '../Services/EntrepriseService';
 
 
 const TableauDeBord = () => {
 
+    const [administrateurs, setAdministrateurs] = useState([]);
+    const [entreprises, setEntreprises] = useState([]);
+
+    const fetchAdministrateurs = async () => {
+        try {
+            const response = await AdministrateurService.getAllAdministrateur();
+            setAdministrateurs(response);
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
+    let token = localStorage.getItem("token");
+    console.log(token);
+
+    const fetchEntreprises = async () => {
+        try {
+            const response = await EntrepriseService.getAllEntreprise();
+            setEntreprises(response)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect (() => {
+        fetchAdministrateurs();
+    }, [])
 
     return <> 
         <NavBar/>
@@ -14,7 +44,7 @@ const TableauDeBord = () => {
         </div>
         <div id='titre-tableaudebord'>
             <h1>Tableau de bord</h1>
-            <h2>Administrateur : "NOM DE L'ADMIN CONNECTÉ"</h2>
+            <h2> NAME ADMIN </h2>
         </div>
         <div id='block-crud'>
             <div className='block-conteneur-crud'>

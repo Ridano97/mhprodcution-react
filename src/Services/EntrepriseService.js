@@ -1,12 +1,15 @@
 import axios from "axios";
+import instance from "../API/Axios";
 
+    const token = localStorage.getItem("token")
 
-class EntrepriseService  {
-    
-    static getAllEntreprise(){
-        axios.get("http://127.0.0.1:3005/entreprises");
+    const getAllEntreprise = () => {
+        return instance(token).get("/entreprises");
     }
-}
+
+    const getEntrepriseByID = (id) => {
+        return instance(token).get("/entreprises/" + id);
+    }
 
 
-export default EntrepriseService ;
+export default {getAllEntreprise, getEntrepriseByID} ;

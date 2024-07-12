@@ -1,41 +1,57 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from '../Components/NavBar';
-import '../Styles/TableauDeBord.css'
+import '../Styles/TableauDeBord.css';
 import Footer from '../Components/Footer';
-import AdministrateurService from '../Services/AdministrateurService';
+import AdminService from '../Services/AdministrateurService';
+import { jwtDecode } from 'jwt-decode';
 import EntrepriseService from '../Services/EntrepriseService';
+
 
 
 const TableauDeBord = () => {
 
-    const [administrateurs, setAdministrateurs] = useState([]);
+    const [administrateurs, setAdministrateurs] = useState({});
     const [entreprises, setEntreprises] = useState([]);
+    const [entreprisesID, setEntreprisesID] = useState ([]);
+    const token = localStorage.getItem("token")
+    const decoded = jwtDecode(token); /* decodé le token pour obtenir l'ID  */ 
 
-    const fetchAdministrateurs = async () => {
-        try {
-            const response = await AdministrateurService.getAllAdministrateur();
-            setAdministrateurs(response);
-        } catch (error) {
-            console.log(error);
-        }
+    /* console.log(decoded); */
+
+    const fetchAdministrateursByID = async () => {
+        const data = await AdminService.getAdministrateurByID(decoded.id).then((response) => {
+            console.log(response.data);
+            setAdministrateurs(response.data);
+        }) 
 
     }
 
-    let token = localStorage.getItem("token");
-    console.log(token);
+   /*  console.log(administrateurs); */
+
 
     const fetchEntreprises = async () => {
-        try {
-            const response = await EntrepriseService.getAllEntreprise();
-            setEntreprises(response)
-        } catch (error) {
-            console.log(error);
-        }
+        const data = await EntrepriseService.getAllEntreprise().then((response) => {
+            console.log(response.data);
+            setEntreprises(response.data);
+        });
+
+   /*  console.log(entreprises);
+             */
+    }
+
+    const fetchEntreprisesByID = async () => {
+        const data = await EntrepriseService.getEntrepriseByID(decoded.id).then((response) => {
+            console.log(response.data);
+            setEntreprisesID(response.data)
+        }) 
     }
 
     useEffect (() => {
-        fetchAdministrateurs();
-    }, [])
+        fetchAdministrateursByID();
+        fetchEntreprises();
+        fetchEntreprisesByID();
+    }, []);
+
 
     return <> 
         <NavBar/>
@@ -44,7 +60,7 @@ const TableauDeBord = () => {
         </div>
         <div id='titre-tableaudebord'>
             <h1>Tableau de bord</h1>
-            <h2> NAME ADMIN </h2>
+            <h2> {administrateurs?.adm_nom} </h2> {/* le point d'interrogation signifie que si la clé de l'objet n'existe pas, ça ne cassera pas */}
         </div>
         <div id='block-crud'>
             <div className='block-conteneur-crud'>
@@ -61,7 +77,8 @@ const TableauDeBord = () => {
             </div>
         </div>
         <div id='block-nb-entreprise'>
-            <h3>Nombre d'entreprise : "SELECT * FROM ENTREPRISE"</h3>
+            <h3>Nombre d'entreprise : {entreprises.length}
+            </h3>
         </div>
         <div id='block-conteneur-formulaire'>
             <div className='block-crud-formulaire' >
@@ -98,9 +115,9 @@ const TableauDeBord = () => {
             <div className='block-crud-formulaire' >
                 <h4 id='afficherentreprise'>Afficher une entreprise cliente via l'ID</h4>
                 <label className="designation-champ" htmlFor="">ID Entreprise :</label>
-                <input type="text" />
+                <input type="number"  />
                 <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' type="submit" value="Valider" />
+                <input className='button-formulaire' onClick={() => {fetchEntreprisesByID()}} type="button" value="Valider" />
             </div>
         </div>
         <Footer/>

@@ -13,7 +13,7 @@ const ConnexionAdministrateur = () => {
     const navigate = useNavigate();
 
     const login = () => {
-        instance.post("auth/login" , {
+        instance().post("/auth/login" , {
             email : email,
             mdp : mdp
         })
@@ -25,9 +25,7 @@ const ConnexionAdministrateur = () => {
         })
         .catch(function (error) {
             console.log(error);
-            
         });
-
     }    
 
     return <> 

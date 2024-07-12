@@ -1,13 +1,16 @@
 import axios from "axios";
+import instance from "../API/Axios";
 
+    const token = localStorage.getItem("token")
 
-class AdministrateurService {
-
-    static getAllAdministrateur(){
-        axios.get("http://127.0.0.1:3005/administrateurs");
+    const getAllAdministrateur = () => {
+        axios.get("/administrateurs");
     }
-}
+
+    const getAdministrateurByID = (id) => {
+        return instance(token).get("/administrateurs/" + id);
+    }
 
 
 
-export default AdministrateurService ;
+export default {getAllAdministrateur, getAdministrateurByID} ;

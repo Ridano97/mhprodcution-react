@@ -7,6 +7,12 @@
     background-attachment: fixed;
 }
 
+#disposition-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .rubrique { 
     color: white;
 }

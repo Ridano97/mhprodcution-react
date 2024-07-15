@@ -6,13 +6,18 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import ConnexionAdministrateur from './Pages/ConnexionAdministrateur';
 import ConnexionSuiviChantierPage from './Pages/ConnexionSuiviChantierPage';
+import ProtectedRoutes from './Utils/ProtectedRoutes';
+import ChantierPage from './Pages/ChantierPage';
 
 const App = () => {
+    
+
     return <>
         <BrowserRouter>
         <Routes>
             <Route path='accueil' element={<AccueilPage/>}/>
             <Route path='connexion-admin' element={<ConnexionAdministrateur/>}/>
+            <Route path='chantier' element={<ChantierPage/>}   />
             <Route path='tableaudebord-administrateur' element={<TableauDeBord/>}/>
             <Route path='connexion-suivichantier' element={<ConnexionSuiviChantierPage/>}/>
         </Routes>

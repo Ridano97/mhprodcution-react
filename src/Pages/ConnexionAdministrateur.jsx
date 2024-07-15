@@ -24,7 +24,7 @@ const ConnexionAdministrateur = () => {
             navigate("/tableaudebord-administrateur");
         })
         .catch(function (error) {
-            console.log(error);
+            toast.error(error.response.data.error)
         });
     }    
 

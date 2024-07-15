@@ -1,6 +1,20 @@
  #etat {
     margin-left: 60px;
     color: green;
+    margin-bottom: 10px;
+}
+
+#logout {
+    margin-left: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+#logout:hover {
+    cursor: pointer;
+    background-color: rgb(26, 24, 24);
 }
 
 #titre-tableaudebord {

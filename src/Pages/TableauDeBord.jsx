@@ -5,6 +5,9 @@ import Footer from '../Components/Footer';
 import AdminService from '../Services/AdministrateurService';
 import { jwtDecode } from 'jwt-decode';
 import EntrepriseService from '../Services/EntrepriseService';
+import instance from '../API/Axios';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,10 +16,26 @@ const TableauDeBord = () => {
     const [administrateurs, setAdministrateurs] = useState({});
     const [entreprises, setEntreprises] = useState([]);
     const [entreprisesID, setEntreprisesID] = useState ([]);
+    const [nouvelleEntreprise, setNouvelleEntreprise] = useState({
+        ent_nom : "",
+        ent_mdp : "",
+        ent_date_inscription : "",
+        ent_url_logo : "" 
+    }); 
     const token = localStorage.getItem("token")
     const decoded = jwtDecode(token); /* decodé le token pour obtenir l'ID  */ 
+    const navigate = useNavigate();
 
     /* console.log(decoded); */
+
+      // handle click pour l'évenement de la déconnexion avec le button
+  const handleLogout = () => {
+    // remove the token and user from the session storage
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem('email');
+    navigate('/connexion-admin');
+    toast.success("Déconnexion avec succès");
+  }
 
     const fetchAdministrateursByID = async () => {
         const data = await AdminService.getAdministrateurByID(decoded.id).then((response) => {
@@ -46,17 +65,29 @@ const TableauDeBord = () => {
         }) 
     }
 
+ /*    const addEntreprises = () => {
+        instance(token).post("/entreprises", nouvelleEntreprise).then((response) => {
+            toast.success(response.data.message);
+            navigate("/tableaudebord-administrateur").catch((error) => {
+				console.log(error);
+                console.log(nouvelleEntreprise);
+			});
+        })
+    }
+ */
     useEffect (() => {
         fetchAdministrateursByID();
         fetchEntreprises();
         fetchEntreprisesByID();
+       /*  addEntreprises(); */
     }, []);
 
 
     return <> 
         <NavBar/>
-        <div>
+        <div id='status'>
             <p id='etat'>Administrateur</p>
+            <button id='logout' onClick={handleLogout}>Déconnexion</button>
         </div>
         <div id='titre-tableaudebord'>
             <h1>Tableau de bord</h1>
@@ -84,15 +115,15 @@ const TableauDeBord = () => {
             <div className='block-crud-formulaire' >
                 <h4 id='ajoutentreprise'>Ajouter une entreprise</h4>
                 <label className="designation-champ" htmlFor="">NOM :</label>
-                <input type="text" />
+                <input type="text" required onChange={(e) => {setNouvelleEntreprise({ ...nouvelleEntreprise, ent_nom : e.target.value })}} />
                 <label className="designation-champ" htmlFor="">MOT DE PASSE :</label> 
-                <input type="password" name="" id="" />
+                <input type="password" required onChange={(e) => {setNouvelleEntreprise({ ...nouvelleEntreprise, ent_mdp : e.target.value})}}/>
                 <label className="designation-champ" htmlFor="">DATE D'INSCRIPTION</label>
-                <input type="date" name="" id="" />
+                <input type="date" required onChange={(e) => {setNouvelleEntreprise ({ ...nouvelleEntreprise, ent_date_inscription : e.target.value})}} />
                 <label className="designation-champ" htmlFor="">URL LOGO</label>
-                <input type="text" name="" id="" />
+                <input type="text"  required onChange={(e) => {setNouvelleEntreprise ({ ...nouvelleEntreprise, ent_url_logo : e.target.value})}} />
                 <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' type="submit" value="Valider" />
+                <input className='button-formulaire' type="submit" value="Valider" /* onClick={() => { addEntreprises();}}  *//>
             </div>
             <div className='block-crud-formulaire' >
                 <h4 id='modifierentreprise'>Modifier / Remplacer une entreprise cliente</h4>
@@ -117,7 +148,7 @@ const TableauDeBord = () => {
                 <label className="designation-champ" htmlFor="">ID Entreprise :</label>
                 <input type="number"  />
                 <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' onClick={() => {fetchEntreprisesByID()}} type="button" value="Valider" />
+                <input className='button-formulaire' /* onClick={() => {fetchEntreprisesByID()}} */ type="button" value="Valider" />
             </div>
         </div>
         <Footer/>

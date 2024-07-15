@@ -1,0 +1,12 @@
+#navbar-background, #navbar-header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.rubrique { 
+    color: white;
+}
+

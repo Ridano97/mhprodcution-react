@@ -35,7 +35,7 @@ const ChantierPage = () => {
                 <ul>
                     <li><a href=''><span className='rubrique'>FILMS D'ENTREPRISES</span></a></li>
                     <li><a href=''><span className='rubrique'>FILMS D'INDUSTRIES</span></a></li>
-                    <li><a href=''><span className='rubrique'>SUIVIS DE CHANTIER</span></a></li>
+                    <li><a href='/chantier'><span className='rubrique'>SUIVIS DE CHANTIER</span></a></li>
                     <li><a href=''><span className='rubrique'>PRESTATIONS DE MARIAGES</span></a></li>
                     <li><a href=''><span className='rubrique'>FILMS ARTISTIQUES</span></a></li>
                     <li><a href=''><span className='rubrique'>PORTFOLIO</span></a></li>

@@ -13,7 +13,7 @@ const Footer = () => {
     <footer>
         <div id='footer-conteneur'>
             <div id='conteneur-image'>
-                <img src={LogoMHP} alt="logomhp" width={90} height={90} />
+                    <img src={LogoMHP} alt="logomhp" width={90} height={90} />
                 <div>
                     <a target='blank_' href='https://www.facebook.com/MohamedHenniProd/?locale=fr_FR' ><img className='reseauxsociaux' src={LogoFacebook} alt="iconefacebook" width={20} height={20}/></a>
                     <a target='blank_' href='https://www.linkedin.com/in/mohamed-henni-630187141/?originalSubdomain=fr'><img className='reseauxsociaux' src={LogoLinkedIn} alt="iconelinkedin" width={20} height={20} /></a>

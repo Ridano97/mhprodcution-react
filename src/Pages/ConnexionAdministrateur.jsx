@@ -31,7 +31,7 @@ const ConnexionAdministrateur = () => {
     return <> 
         <div id='main-arriere-plan'>
             <div id='logo-administrateur'>
-                <img src={LogoMHP} alt="logomhp" width={350} height={350} />
+                <a href="/accueil"><img src={LogoMHP} alt="logomhp" width={350} height={350} /></a>
             </div>
             <div id='formulaire-connexion-admin'>
                 <h2 id='sous-titre-admin'>ACCÈS ADMINISTRATEUR</h2>

@@ -11,9 +11,13 @@ import instance from "../API/Axios";
         return instance(token).get("/entreprises/" + id);
     }
 
-    const addEntreprise = () => {
-        return instance(token).post("/entreprises")
+    const addEntreprise = (data) => {
+        return instance(token).post("/entreprises", data)
+    }
+
+    const removeEntreprise = (id) => {
+        return instance(token).delete("/entreprises/" + id);
     }
 
 
-export default {getAllEntreprise, getEntrepriseByID, addEntreprise} ;
+export default {getAllEntreprise, getEntrepriseByID, addEntreprise, removeEntreprise} ;

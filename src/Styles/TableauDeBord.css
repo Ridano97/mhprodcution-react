@@ -169,6 +169,8 @@ h4 {
     color: white;
 }
 
+
+
 .button-formulaire {
     padding: 5px 15px;
     border-radius: 10px;
@@ -180,3 +182,62 @@ h4 {
     background-color: rgb(47, 44, 44);
     cursor: pointer;
 }
+
+#tableau-gestion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+table, th, td {
+    border: 1px black solid;
+    text-align: center;
+    border-radius: 4px;
+    color: white;
+}
+
+table {
+    background-color: black;
+    width: 50%;
+}
+
+th {
+    background: linear-gradient(rgb(255, 150, 255), rgb(246, 128, 108));
+    padding: 5px;
+}
+td {
+    background: linear-gradient(rgb(57, 43, 255),rgb(133, 133, 248));
+    padding: 5px;
+}
+
+#logo-entreprise {
+    border-radius: 50px;
+    border: 1px black solid;
+}
+
+.action:nth-child(1){
+    background: linear-gradient(rgb(112, 245, 24), rgb(225, 225, 39));
+}
+
+.action:nth-child(2){
+    background: linear-gradient(rgb(255, 187, 78), rgb(225, 39, 39));
+}
+
+.action {
+    padding: 5px;
+    margin: 5px;
+    border: white solid 1px;
+    border-radius: 5px;
+    color: white;
+}
+
+.action:hover {
+    cursor: pointer;
+    padding: 6px;
+}
+
+
+
+
+

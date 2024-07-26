@@ -5,7 +5,6 @@ import Footer from '../Components/Footer';
 import AdminService from '../Services/AdministrateurService';
 import { jwtDecode } from 'jwt-decode';
 import EntrepriseService from '../Services/EntrepriseService';
-import instance from '../API/Axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,9 +19,9 @@ const TableauDeBord = () => {
         ent_nom : "",
         ent_mdp : "",
         ent_date_inscription : "",
-        ent_url_logo : "" 
+        ent_logo_url : "" 
     }); 
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
     const decoded = jwtDecode(token); /* decodé le token pour obtenir l'ID  */ 
     const navigate = useNavigate();
 
@@ -43,43 +42,50 @@ const TableauDeBord = () => {
             setAdministrateurs(response.data);
         }) 
 
+
+    }
+    const removeEntreprise = async (id) => {
+        try {
+            const response = await EntrepriseService.removeEntreprise(id)
+            fetchEntreprises()
+            toast.success("Entreprise supprimée")
+        } catch (error) {
+            toast.error(error.response.data.error)
+            console.log(error);
+            
+        }
+
     }
 
-   /*  console.log(administrateurs); */
+    console.log(administrateurs);
 
 
     const fetchEntreprises = async () => {
-        const data = await EntrepriseService.getAllEntreprise().then((response) => {
+        const response = await EntrepriseService.getAllEntreprise().then((response) => {
             console.log(response.data);
             setEntreprises(response.data);
         });
 
-   /*  console.log(entreprises);
-             */
+    console.log(entreprises);
+            
     }
 
-    const fetchEntreprisesByID = async () => {
-        const data = await EntrepriseService.getEntrepriseByID(decoded.id).then((response) => {
-            console.log(response.data);
-            setEntreprisesID(response.data)
-        }) 
+
+    const addEntreprises = async () => {
+        try {
+            const response = await EntrepriseService.addEntreprise(nouvelleEntreprise);
+            toast.success("Entreprise ajoutée");
+            fetchEntreprises()
+        } catch (error) {
+            toast.error(error.response.data.error)
+            console.log(error);
+        }
     }
 
- /*    const addEntreprises = () => {
-        instance(token).post("/entreprises", nouvelleEntreprise).then((response) => {
-            toast.success(response.data.message);
-            navigate("/tableaudebord-administrateur").catch((error) => {
-				console.log(error);
-                console.log(nouvelleEntreprise);
-			});
-        })
-    }
- */
     useEffect (() => {
-        fetchAdministrateursByID();
+        fetchAdministrateursByID();    /* Que des fetch la plupart du temps dans les useEffects grossomodo */
         fetchEntreprises();
-        fetchEntreprisesByID();
-       /*  addEntreprises(); */
+
     }, []);
 
 
@@ -95,16 +101,16 @@ const TableauDeBord = () => {
         </div>
         <div id='block-crud'>
             <div className='block-conteneur-crud'>
-                <a href='#ajoutentreprise' target='' ><h3>Ajouter une entreprise cliente</h3></a>
+                <a href='#ajoutentreprise' target='self_' ><h3>Ajouter une entreprise cliente</h3></a>
             </div>
             <div className='block-conteneur-crud'>
-                <a href='#modifierentreprise' target=''><h3>Modifier/Remplacer une entreprise cliente</h3></a>
+                <a href='#modifierentreprise' target='self_'><h3>Modifier/Remplacer une entreprise cliente</h3></a>
             </div>
             <div className='block-conteneur-crud'>
-                <a href='#supprimerentreprise' target=''><h3>Supprimer une entreprise cliente </h3></a>
+                <a href='#supprimerentreprise' target='self_'><h3>Supprimer une entreprise cliente </h3></a>
             </div>
             <div className='block-conteneur-crud'>
-                <a href='#afficherentreprise' target=''><h3>Afficher via l'ID une entreprise cliente</h3></a>
+                <a href='#afficherentreprise' target='self_'><h3>Afficher via l'ID une entreprise cliente</h3></a>
             </div>
         </div>
         <div id='block-nb-entreprise'>
@@ -121,9 +127,9 @@ const TableauDeBord = () => {
                 <label className="designation-champ" htmlFor="">DATE D'INSCRIPTION</label>
                 <input type="date" required onChange={(e) => {setNouvelleEntreprise ({ ...nouvelleEntreprise, ent_date_inscription : e.target.value})}} />
                 <label className="designation-champ" htmlFor="">URL LOGO</label>
-                <input type="text"  required onChange={(e) => {setNouvelleEntreprise ({ ...nouvelleEntreprise, ent_url_logo : e.target.value})}} />
+                <input type="text"  required onChange={(e) => {setNouvelleEntreprise ({ ...nouvelleEntreprise, ent_logo_url : e.target.value})}} />
                 <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' type="submit" value="Valider" /* onClick={() => { addEntreprises();}}  *//>
+                <input className='button-formulaire' type="submit" value="Valider" onClick={() => { addEntreprises()}} />
             </div>
             <div className='block-crud-formulaire' >
                 <h4 id='modifierentreprise'>Modifier / Remplacer une entreprise cliente</h4>
@@ -146,10 +152,45 @@ const TableauDeBord = () => {
             <div className='block-crud-formulaire' >
                 <h4 id='afficherentreprise'>Afficher une entreprise cliente via l'ID</h4>
                 <label className="designation-champ" htmlFor="">ID Entreprise :</label>
-                <input type="number"  />
+                <input type="number" required />
                 <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' /* onClick={() => {fetchEntreprisesByID()}} */ type="button" value="Valider" />
+                <input className='button-formulaire' type="button" value="Valider" />
             </div>
+        </div>
+        <div id='tableau-gestion'>
+            <table >
+                <thead>
+                <tr>
+                    <th>ID Entreprise</th>
+                    <th>Nom</th>
+                    <th>Date d'inscription</th>
+                    <th>LOGO</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {entreprises.map(entreprise => (
+                    <tr key={entreprise.ent_id}>
+                    <td>
+                        {entreprise.ent_id}
+                    </td>
+                    <td>
+                        {entreprise.ent_nom}
+                    </td>
+                    <td>
+                        {entreprise.ent_date_inscription}
+                    </td>
+                    <td>
+                        <img id='logo-entreprise' src={entreprise.ent_logo_url} alt="logo_entreprise" height={80} width={85}/>
+                    </td>
+                    <td>
+                        <button className='action'>MODIFIER</button>
+                        <button className='action' onClick={() => removeEntreprise(entreprise.ent_id)}>SUPPRIMER</button>
+                    </td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
         </div>
         <Footer/>
     </>

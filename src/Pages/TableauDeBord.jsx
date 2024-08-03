@@ -82,6 +82,14 @@ const TableauDeBord = () => {
         }
     }
 
+    const updateEntreprise = () => {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+
     useEffect (() => {
         fetchAdministrateursByID();    /* Que des fetch la plupart du temps dans les useEffects grossomodo */
         fetchEntreprises();
@@ -99,19 +107,10 @@ const TableauDeBord = () => {
             <h1>Tableau de bord</h1>
             <h2> {administrateurs?.adm_nom} </h2> {/* le point d'interrogation signifie que si la clé de l'objet n'existe pas, ça ne cassera pas */}
         </div>
-        <div id='block-crud'>
-            <div className='block-conteneur-crud'>
-                <a href='#ajoutentreprise' target='self_' ><h3>Ajouter une entreprise cliente</h3></a>
-            </div>
-            <div className='block-conteneur-crud'>
-                <a href='#modifierentreprise' target='self_'><h3>Modifier/Remplacer une entreprise cliente</h3></a>
-            </div>
-            <div className='block-conteneur-crud'>
-                <a href='#supprimerentreprise' target='self_'><h3>Supprimer une entreprise cliente </h3></a>
-            </div>
-            <div className='block-conteneur-crud'>
-                <a href='#afficherentreprise' target='self_'><h3>Afficher via l'ID une entreprise cliente</h3></a>
-            </div>
+        <div id='jumbotron'>
+                <div className='block-conteneur-crud'>
+                    <a href='#ajoutentreprise' target='self_' ><h3>Ajouter une entreprise cliente</h3></a>
+                </div>
         </div>
         <div id='block-nb-entreprise'>
             <h3>Nombre d'entreprise : {entreprises.length}
@@ -141,20 +140,6 @@ const TableauDeBord = () => {
                 <input type="text" name="" id="" />
                 <label className="designation-champ" htmlFor=""></label>
                 <input className='button-formulaire' type="submit" value="Valider" />
-            </div>
-            <div className='block-crud-formulaire' >
-                <h4 id='supprimerentreprise'>Supprimer une entreprise cliente</h4>
-                <label className="designation-champ" htmlFor="">NOM :</label>
-                <input type="text" />
-                <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' type="submit" value="Valider" />
-            </div>
-            <div className='block-crud-formulaire' >
-                <h4 id='afficherentreprise'>Afficher une entreprise cliente via l'ID</h4>
-                <label className="designation-champ" htmlFor="">ID Entreprise :</label>
-                <input type="number" required />
-                <label className="designation-champ" htmlFor=""></label>
-                <input className='button-formulaire' type="button" value="Valider" />
             </div>
         </div>
         <div id='tableau-gestion'>

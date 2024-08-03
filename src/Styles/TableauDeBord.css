@@ -29,65 +29,34 @@ h3 {
     color: white;
 }
 
-#block-crud {
+#jumbotron {
+    background-image: url(../Assets/hotel.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    justify-content: center ;
     align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
+    flex-direction: column;
+    height: 550px;
+    margin-bottom: 50px;
 }
 
+
 .block-conteneur-crud {
-    width: 33.33%;
-    background: linear-gradient( rgb(255, 89, 89), rgb(250, 207, 126));
+    background: linear-gradient( #6C9DAE, #073849 );
     margin: 5px;
     border-radius: 10px;
-    height: 150px;
-    padding: 5px;
+    padding: 30px;
     align-items: center;
     display: flex;
     justify-content: center;
 }
-.block-conteneur-crud:nth-child(2) {
-    width: 33.33%;
-    background: linear-gradient(rgb(131, 243, 131), rgb(225, 225, 39));
-    margin: 5px;
-    border-radius: 10px;
-    height: 150px;
-    padding: 5px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.block-conteneur-crud:nth-child(4) {
-    width: 33.33%;
-    background: linear-gradient(rgb(255, 150, 255), rgb(246, 128, 108));
-    margin: 5px;
-    border-radius: 10px;
-    height: 150px;
-    padding: 5px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.block-conteneur-crud:nth-child(3) {
-    width: 33.33%;
-    background: linear-gradient(rgb(57, 43, 255),rgb(133, 133, 248));
-    margin: 5px;
-    border-radius: 10px;
-    height: 150px;
-    padding: 5px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
+
 
 .block-conteneur-crud:hover {
     cursor: pointer;
-    height: 155px;
-    width: 350px;
+    padding: 40px;
     transition-property: all;
     transition-timing-function: ease-in-out;
     transition-duration: 0.5s;
@@ -118,7 +87,7 @@ h3 {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
-    background: linear-gradient( rgb(255, 89, 89), rgb(250, 207, 126));
+    background: linear-gradient( #6C9DAE, #073849 );
     padding: 20px;
     border-radius: 10px;
     width: 50%;
@@ -132,38 +101,6 @@ h3 {
     margin-top: 10px;
 }
 
-.block-crud-formulaire:nth-child(2) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 100px;
-    background: linear-gradient(rgb(131, 243, 131), rgb(225, 225, 39));
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.block-crud-formulaire:nth-child(3) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 100px;
-    background: linear-gradient(rgb(57, 43, 255),rgb(133, 133, 248));
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.block-crud-formulaire:nth-child(4) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 100px;
-    background: linear-gradient(rgb(255, 150, 255), rgb(246, 128, 108));
-    padding: 20px;
-    border-radius: 10px;
-}
 
 h4 {
     color: white;
@@ -194,7 +131,6 @@ table, th, td {
     border: 1px black solid;
     text-align: center;
     border-radius: 4px;
-    color: white;
 }
 
 table {
@@ -203,12 +139,14 @@ table {
 }
 
 th {
-    background: linear-gradient(rgb(255, 150, 255), rgb(246, 128, 108));
+    background: linear-gradient(rgb(0, 0, 0), rgb(114, 114, 114));
     padding: 5px;
+    color: white;
 }
 td {
-    background: linear-gradient(rgb(57, 43, 255),rgb(133, 133, 248));
+    background-color: white;
     padding: 5px;
+    color: black;
 }
 
 #logo-entreprise {
@@ -217,11 +155,11 @@ td {
 }
 
 .action:nth-child(1){
-    background: linear-gradient(rgb(112, 245, 24), rgb(225, 225, 39));
+    background: linear-gradient(rgb(12, 142, 83), rgb(62, 212, 155));
 }
 
 .action:nth-child(2){
-    background: linear-gradient(rgb(255, 187, 78), rgb(225, 39, 39));
+    background: linear-gradient(rgb(255, 12, 12), rgb(253, 108, 108));
 }
 
 .action {

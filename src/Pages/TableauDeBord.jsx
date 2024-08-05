@@ -42,8 +42,8 @@ const TableauDeBord = () => {
             setAdministrateurs(response.data);
         }) 
 
-
     }
+    
     const removeEntreprise = async (id) => {
         try {
             const response = await EntrepriseService.removeEntreprise(id)

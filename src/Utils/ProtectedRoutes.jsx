@@ -1,16 +1,3 @@
-/* import { jwtDecode } from 'jwt-decode';
-import {Outlet, Navigate} from 'react-router-dom'
-
-
-const ProtectedRoutes = () => {
-    const token = localStorage.getItem("token");
-    const login = true 
-    return login ? <Outlet/> : <Navigate to={"/connexion-admin"}/>
-}
-
-
-export default ProtectedRoutes ;  */
-
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
@@ -24,7 +11,7 @@ const ProtectedRoutes = () => {
 
     try {
         const decodedToken = jwtDecode(token);
-        if (decodedToken.role === 'administrateur') {
+        if (decodedToken.role === 'admin') {
             return <Outlet />;
         } else {
             return <Navigate to="/unauthorized" />;

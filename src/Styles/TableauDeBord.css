@@ -175,7 +175,12 @@ td {
     padding: 6px;
 }
 
-
+#unauthorized {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 
 

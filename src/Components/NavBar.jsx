@@ -22,7 +22,7 @@ const NavBar = () => {
                             <a href='/connexion-suivichantier'><span>SUIVIS CHANTIERS</span></a>
                         </li>
                        <li>
-                            <a href=''><span>PRESTATIONS DE MARIAGES</span></a>
+                            <a href='/mariage'><span>PRESTATIONS DE MARIAGES</span></a>
                         </li>
                        <li>
                             <a href=''><span>FILMS ARTISTIQUES</span></a>

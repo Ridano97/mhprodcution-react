@@ -82,11 +82,13 @@ const TableauDeBord = () => {
         }
     }
 
-    const updateEntreprise = () => {
+    const updateEntreprise = async (id) => {
         try {
-            
+            const reponse = await EntrepriseService.updateEntreprise()
+            toast.success("Modication réalisée")
         } catch (error) {
-            
+            toast.error(error.response.data.error)
+            console.log(error);
         }
     }
 

@@ -52,3 +52,14 @@ label {
     cursor: pointer;
     background-color: rgb(34, 31, 31);
 }
+
+@media (max-width : 481px ) {
+
+    #disposition-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+  }

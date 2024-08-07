@@ -10,6 +10,7 @@ import MariagePage from './Pages/MariagePage';
 import Unauthorized from './Utils/Unauthorized';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import AProposPage from './Pages/AProposPage';
 
 const App = () => {
     return (
@@ -20,6 +21,7 @@ const App = () => {
                 <Route path='chantier' element={<ChantierPage />} />
                 <Route path='mariage' element={<MariagePage />} />
                 <Route path='connexion-suivichantier' element={<ConnexionSuiviChantierPage />} />
+                <Route path='apropos' element={<AProposPage />} />
                 <Route path='unauthorized' element={<Unauthorized />} />
                 <Route element={<ProtectedRoutes />}>
                     <Route path='tableaudebord-administrateur' element={<TableauDeBord />} />

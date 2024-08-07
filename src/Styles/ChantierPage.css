@@ -5,8 +5,39 @@
     justify-content: center;
 }
 
-
-.rubrique { 
+.rubrique {
     color: white;
 }
 
+
+#titre-entreprise {
+    color: white;
+    margin-bottom: 50px;
+}
+
+#logoutII {
+    color: black;
+    background-color: white;
+    text-align: center;
+    margin-left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+#logoutII:hover {
+    cursor: pointer;
+    background-color:#073849 ;
+    color: white;
+} 
+
+#main-conteneur {
+    background-color: black;
+    padding-bottom: 50px;
+}
+
+#block-timelapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

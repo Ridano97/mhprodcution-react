@@ -1,10 +1,11 @@
 #navbar-block {
     background-color: rgba(0, 0, 0, 0.162);
-    background-image: url(../Assets/mhpjumbotron.JPG);
+    background-image: url(../Assets/Dunkerque.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 800px;
 }
 
 #disposition-header {
@@ -13,6 +14,77 @@
     align-items: center;
 }
 
-.rubrique { 
+#footerII {
+    background-color: black;
+}
+
+.navigation-footer {
     color: white;
+}
+
+.nav-accueil{
+    color: black;
+}
+
+#conteneur-accueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+#aproposbutton {
+    padding: 5px;
+    background-color: black;
+    border: 1px solid white;
+    color:  white;
+    border-radius: 5px;
+}
+
+#aproposbutton:hover {
+    cursor: pointer;
+    background-color: #073849;
+}
+
+.reseauxsociauxII{
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.reseauxsociaux{
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.reseauxsociaux:hover{
+    cursor: pointer;
+    padding: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.2s; 
+}
+
+.reseauxsociauxII:hover {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+@media (max-width : 481px ) {
+
+    #logotitre {
+        height: 100px;
+        width: 300px ;
+
+    }
+
+    
 }

@@ -47,7 +47,7 @@ const ConnexionSuiviChantierPage = () => {
                                 <li><a href='/mariage'><span className='rubrique'>PRESTATIONS DE MARIAGES</span></a></li>
                                 <li><a href=''><span className='rubrique'>FILMS ARTISTIQUES</span></a></li>
                                 <li><a href=''><span className='rubrique'>PORTFOLIO</span></a></li>
-                                <li><a href=''><span className='rubrique'>À PROPOS</span></a></li>
+                                <li><a href='/apropos'><span className='rubrique'>À PROPOS</span></a></li>
                                 </ul>
                             </nav>
                         </div>

@@ -13,6 +13,10 @@
     padding: 10px 20px;
 }
 
+.navigation-footer {
+    color: black;
+}
+
 #conteneur-image {
     display: flex;
     justify-content: center;
@@ -20,17 +24,41 @@
     flex-direction: column;
 }
 
-.reseauxsociaux {
+.reseauxsociauxfooter {
     margin: 0px 10px;
+    border-radius: 5px;
 }
 
-.reseauxsociaux:hover {
+.reseauxsociauxfooter:hover {
     cursor: pointer;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
     transition-property: all;
     transition: all 0.5s ease-in-out;
     transition-delay: 0.2s;
+}
+
+@media (max-width : 481px ) {
+
+    footer {
+        display: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+   
+    #footer-conteneur{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    li {
+        font-size: 7px;
+    }
+
+
 }

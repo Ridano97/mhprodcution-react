@@ -19,7 +19,7 @@ const MariagePage = () => {
                 <img src={Mariage3} alt="photomariage" height={600} width={400} />
             </div>
             <div className='representation'>
-                <p>
+                <p className='text-cdc'>
                     Plongez dans l'univers magique et émouvant des films de mariage avec Mohamed Henni Production. Nous capturons l'essence de votre grand jour et
                     transformons chaque moment précieux en souvenirs inoubliables à travers nos services vidéo dédiés aux mariages. 
                     Découvrez en détail ce que nous proposons pour immortaliser ce moment unique.
@@ -32,7 +32,7 @@ const MariagePage = () => {
         <div className='back-block'>
             <div className='representation'>
                 <h2> Narration Emotionnelle </h2>
-                <p>
+                <p className='text-cdc'>
                     À travers une narration subtile et émouvante, nous racontons l'histoire de votre amour et de votre journée de mariage. 
                     Chaque détail, chaque regard échangé et chaque émotion sont capturés pour créer un récit authentique et touchant qui reflète l'intensité de ce moment unique.
                 </p>
@@ -47,7 +47,7 @@ const MariagePage = () => {
             </div>
             <div className='representation'>
                 <h2>Images Cinématographiques</h2>
-                <p>
+                <p className='text-cdc'>
                     Nos cinéastes professionnels utilisent des techniques cinématographiques de pointe pour donner à votre film de mariage un aspect visuel digne d'une production hollywoodienne.
                     Des plans soigneusement composés aux jeux de lumière subtils, chaque image est pensée pour créer une atmosphère enchanteresse et captivante.
                 </p>

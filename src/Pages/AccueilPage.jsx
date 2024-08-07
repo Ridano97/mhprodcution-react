@@ -1,18 +1,19 @@
 import React from 'react'
-import LogoMHP from '../Assets/logoblanc.png'
+import LogoMHP from '../Assets/logonoir.png'
 import '../Styles/Accueil.css'
-import LogoMHPFooter from '../Assets/logonoir.png'
-import LogoFacebook from '../Assets/facebook.png'
-import LogoLinkedIn from '../Assets/linkedIn.png'
-import LogoYoutube from '../Assets/youtube.png'
-import LogoInstagram from '../Assets/instagram.png'
+import LogoMHPFooter from '../Assets/logoblanc.png'
+import LogoFacebook from '../Assets/icone-reseaux-sociaux/facebookblanc.png'
+import LogoLinkedIn from '../Assets/icone-reseaux-sociaux/linkedinblanc.png'
+import LogoVimeo from '../Assets/icone-reseaux-sociaux/vimeoblanc.png'
+import LogoInstagram from '../Assets/icone-reseaux-sociaux/instablanc.png' 
+import TitreMHP from '../Assets/logotitremhp.png'
 
 const AccueilPage = () => {
 
-
+/* 
     let token = localStorage.getItem("token");
     console.log(token);
-
+ */
     return <>
             <div id='navbar-block'>
                 <header>
@@ -22,80 +23,56 @@ const AccueilPage = () => {
                         </div>
                         <nav className='stroke'>
                             <ul>
-                            <li><a href=''><span className='rubrique'>FILMS D'ENTREPRISES</span></a></li>
-                            <li><a href=''><span className='rubrique'>FILMS D'INDUSTRIES</span></a></li>
-                            <li><a href='/connexion-suivichantier'><span className='rubrique'>SUIVIS DE CHANTIER</span></a></li>
-                            <li><a href='/mariage'><span className='rubrique'>PRESTATIONS DE MARIAGES</span></a></li>
-                            <li><a href=''><span className='rubrique'>FILMS ARTISTIQUES</span></a></li>
-                            <li><a href=''><span className='rubrique'>PORTFOLIO</span></a></li>
-                            <li><a href=''><span className='rubrique'>À PROPOS</span></a></li>
+                            <li><a href=''><span className="nav-accueil">FILMS D'ENTREPRISES</span></a></li>
+                            <li><a href=''><span className="nav-accueil">FILMS D'INDUSTRIES</span></a></li>
+                            <li><a href='/connexion-suivichantier'><span className="nav-accueil">SUIVIS DE CHANTIER</span></a></li>
+                            <li><a href='/mariage'><span className="nav-accueil">PRESTATIONS DE MARIAGES</span></a></li>
+                            <li><a href=''><span className="nav-accueil">FILMS ARTISTIQUES</span></a></li>
+                            <li><a href=''><span className="nav-accueil">PORTFOLIO</span></a></li>
+                            <li><a href='/apropos'><span className="nav-accueil">À PROPOS</span></a></li>
                             </ul>
+                            <button onClick={handleShowLinks} className="navbar__burger">
+                                <span className="burger-bar"></span>
+                            </button>
                         </nav>
                     </div>
                 </header> 
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-            </div>   
-        <footer>
-            <div id='footer-conteneur'>
-                <div id='conteneur-image'>
-                    <img src={LogoMHPFooter} alt="logomhp" width={90} height={90} />
-                    <div>
-                        <a target='blank_' href='https://www.facebook.com/MohamedHenniProd/?locale=fr_FR' ><img className='reseauxsociaux' src={LogoFacebook} alt="iconefacebook" width={20} height={20}/></a>
-                        <a target='blank_' href='https://www.linkedin.com/in/mohamed-henni-630187141/?originalSubdomain=fr'><img className='reseauxsociaux' src={LogoLinkedIn} alt="iconelinkedin" width={20} height={20} /></a>
-                        <a target='blank_' href='https://www.youtube.com/c/mohamedhennidunkerque'><img className='reseauxsociaux' src={LogoYoutube} alt="iconeyoutube" width={20} height={20}/></a>
-                        <a target='blank_' href='https://www.instagram.com/mohamed_henni/'><img className='reseauxsociaux' src={LogoInstagram} alt="iconeinstagram" width={20} height={20}/></a>
+                    <main id='conteneur-accueil'> 
+                        <div>
+                            <img id='logotitre' src={TitreMHP} alt="logotitremhp" height={200} width={500} />
+                        </div>
+                        <div>
+                                <a target='blank_' href='https://www.facebook.com/MohamedHenniProd/?locale=fr_FR' ><img className='reseauxsociauxII' src={LogoFacebook} alt="iconefacebook" width={40} height={40}/></a>
+                                {/* <a target='blank_' href='https://www.linkedin.com/in/mohamed-henni-630187141/?originalSubdomain=fr'><img className='reseauxsociauxII' src={LogoLinkedIn} alt="iconelinkedin" width={40} height={40} /></a> */}
+                                <a target='blank_' href='https://www.youtube.com/c/mohamedhennidunkerque'><img className='reseauxsociauxII' src={LogoVimeo} alt="iconeyoutube" width={40} height={40}/></a>
+                                <a target='blank_' href='https://www.instagram.com/mohamed_henni/'><img className='reseauxsociauxII' src={LogoInstagram}  alt="iconeinstagram" width={40} height={40}/></a>
+                         </div>
+                        <a href="/apropos"><button id='aproposbutton'>À PROPOS</button></a>
+                    </main>
+                </div> 
+                <footer id='footerII'>
+                    <div id='footer-conteneur'>
+                        <div id='conteneur-image'>
+                            <img src={LogoMHPFooter} alt="logomhp" width={90} height={90} />
+                            <div>
+                                <a target='blank_' href='https://www.facebook.com/MohamedHenniProd/?locale=fr_FR' ><img className='reseauxsociaux' src={LogoFacebook} alt="iconefacebook" width={30} height={30}/></a>
+                                <a target='blank_' href='https://www.linkedin.com/in/mohamed-henni-630187141/?originalSubdomain=fr'><img className='reseauxsociaux' src={LogoLinkedIn} alt="iconelinkedin" width={30} height={30} /></a>
+                                <a target='blank_' href='https://www.youtube.com/c/mohamedhennidunkerque'><img className='reseauxsociaux' src={LogoVimeo} alt="iconeyoutube" width={30} height={30}/></a>
+                                <a target='blank_' href='https://www.instagram.com/mohamed_henni/'><img className='reseauxsociaux' src={LogoInstagram}  alt="iconeinstagram" width={30} height={30}/></a>
+                            </div>
+                        </div>
+                        <div>
+                            <nav className='stroke'>
+                                <ul id='conteneur-liste-footer'>
+                                    <li><a href='' target=''> <span className='navigation-footer'>Mention légales</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer'>Politique de confidentialité</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer'>Gestion des cookies</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer'>Contact</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <nav className='stroke'>
-                        <ul id='conteneur-liste-footer'>
-                            <li><a href='' target=''>Mention légales</a></li>
-                            <li><a href='' target=''>Politique de confidentialité</a></li>
-                            <li><a href='' target=''>Gestion des cookies</a></li>
-                            <li><a href='' target=''>Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </footer>
+                </footer>
         
     </>
 }

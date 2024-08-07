@@ -18,7 +18,6 @@ const TableauDeBord = () => {
         ent_logo_url: ""
     });
     const [entrepriseAModifier, setEntrepriseAModifier] = useState({
-        ent_id: "",
         ent_nom: "",
         ent_mdp: "",
         ent_date_inscription: "",
@@ -126,11 +125,11 @@ const removeEntreprise = async (id) => {
                 <div className='block-crud-formulaire'>
                     <h4 id='modifierentreprise'>Modifier / Remplacer une entreprise cliente</h4>
                     <label className="designation-champ" htmlFor="">NOM :</label>
-                    <input type="text" name="ent_id" value={entrepriseAModifier.ent_nom} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }} />
+                    <input type="text" name="ent_nom" value={entrepriseAModifier.ent_nom} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }} />
                     <label className="designation-champ" htmlFor="">MOT DE PASSE :</label>
-                    <input type="password" name="ent_nom" value={entrepriseAModifier.ent_mdp} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
+                    <input type="password" name="ent_mdp" value={entrepriseAModifier.ent_mdp} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
                     <label className="designation-champ" htmlFor="">DATE D'INSCRIPTION :</label>
-                    <input type="date" name="ent_mdp" value={entrepriseAModifier.ent_date_inscription} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
+                    <input type="date" name="ent_date_inscription" value={entrepriseAModifier.ent_date_inscription} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
                     <label className="designation-champ" htmlFor="">URL LOGO</label>
                     <input type="text" name="ent_logo_url" value={entrepriseAModifier.ent_logo_url} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
                     <label className="designation-champ" htmlFor=""></label>

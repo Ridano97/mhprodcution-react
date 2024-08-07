@@ -17,6 +17,7 @@
 
 #titre-page {
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 #contact-mariage {
@@ -45,4 +46,23 @@
     flex-direction: column;
     height: 250px;
     margin-bottom: 50px;
+}
+
+
+@media (max-width : 481px ) {
+
+    .back-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .representation {
+        margin-bottom: 50px;
+    }
+
+    p {
+        text-align: center;
+    }
 }

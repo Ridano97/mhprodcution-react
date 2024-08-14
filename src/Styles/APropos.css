@@ -6,3 +6,93 @@
     color: white;
 }
 
+#jumbotron-apropos {
+    background-image: url(../Assets/aproposvue.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+#conteneur-apropos {
+    background-color: black;
+}
+
+.apropos-informations {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.apropos-informationsIII {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items-conteneur-apropos {
+    color: white;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.items-conteneur-aproposIII {
+    color: black;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.text-apropos {
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.text-aproposII {
+    padding: 35px;
+    margin: 10px;
+    text-align: center;
+}
+
+.apropos-image {
+    border-radius: 10px;
+    margin-top: 35px;
+}
+
+.conteneur-entreprise-partenaire {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#logo-entreprise-partenaire {
+    border-radius: 50px;
+    border: 1px black solid;
+    margin: 15px;
+    margin-top: 30px;
+    
+}
+
+#conteneur-image-partenaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+#titre-apropos-entreprise {
+    margin-top: 50px;
+}
+

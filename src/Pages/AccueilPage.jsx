@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LogoMHP from '../Assets/logonoir.png'
 import '../Styles/Accueil.css'
 import LogoMHPFooter from '../Assets/logoblanc.png'
@@ -10,10 +10,12 @@ import TitreMHP from '../Assets/logotitremhp.png'
 
 const AccueilPage = () => {
 
-/* 
-    let token = localStorage.getItem("token");
-    console.log(token);
- */
+    const [showLinks, setShowLinks] = useState(false);
+
+    const handleShowLinks = () => {
+        setShowLinks(!showLinks)
+    }
+
     return <>
             <div id='navbar-block'>
                 <header>
@@ -21,15 +23,15 @@ const AccueilPage = () => {
                         <div> 
                             <a href="/accueil"><img src={LogoMHP} alt="logo" width={110} height={110}/></a>
                         </div>
-                        <nav className='stroke'>
-                            <ul>
-                            <li><a href=''><span className="nav-accueil">FILMS D'ENTREPRISES</span></a></li>
-                            <li><a href=''><span className="nav-accueil">FILMS D'INDUSTRIES</span></a></li>
-                            <li><a href='/connexion-suivichantier'><span className="nav-accueil">SUIVIS DE CHANTIER</span></a></li>
-                            <li><a href='/mariage'><span className="nav-accueil">PRESTATIONS DE MARIAGES</span></a></li>
-                            <li><a href=''><span className="nav-accueil">FILMS ARTISTIQUES</span></a></li>
-                            <li><a href=''><span className="nav-accueil">PORTFOLIO</span></a></li>
-                            <li><a href='/apropos'><span className="nav-accueil">À PROPOS</span></a></li>
+                        <nav className={`stroke ${showLinks ? "show-nav" : "hide-nav"} `}>
+                            <ul className='navbar_link'>
+                            <li className='item-list slideInDown-1'><a className='navbar-item' href=''><span className="nav-accueil">FILMS D'ENTREPRISES</span></a></li>
+                            <li className='item-list slideInDown-2'><a className='navbar-item' href=''><span className="nav-accueil">FILMS D'INDUSTRIES</span></a></li>
+                            <li className='item-list slideInDown-3'><a className='navbar-item' href='/connexion-suivichantier'><span className="nav-accueil">SUIVIS DE CHANTIER</span></a></li>
+                            <li className='item-list slideInDown-4'><a className='navbar-item' href='/mariage'><span className="nav-accueil">PRESTATIONS DE MARIAGES</span></a></li>
+                            <li className='item-list slideInDown-5'><a className='navbar-item' href=''><span className="nav-accueil">FILMS ARTISTIQUES</span></a></li>
+                            <li className='item-list slideInDown-6'><a className='navbar-item' href=''><span className="nav-accueil">PORTFOLIO</span></a></li>
+                            <li className='item-list slideInDown-7'><a className='navbar-item' href='/apropos'><span className="nav-accueil">À PROPOS</span></a></li>
                             </ul>
                             <button onClick={handleShowLinks} className="navbar__burger">
                                 <span className="burger-bar"></span>
@@ -64,10 +66,10 @@ const AccueilPage = () => {
                         <div>
                             <nav className='stroke'>
                                 <ul id='conteneur-liste-footer'>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Mention légales</span></a></li>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Politique de confidentialité</span></a></li>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Gestion des cookies</span></a></li>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Contact</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer-II'>Mention légales</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer-II'>Politique de confidentialité</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer-II'>Gestion des cookies</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-footer-II'>Contact</span></a></li>
                                 </ul>
                             </nav>
                         </div>

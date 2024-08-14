@@ -18,7 +18,7 @@
     background-color: black;
 }
 
-.navigation-footer {
+.navigation-footer-II {
     color: white;
 }
 
@@ -45,6 +45,7 @@
 #aproposbutton:hover {
     cursor: pointer;
     background-color: #073849;
+    transition: all 1s;
 }
 
 .reseauxsociauxII{
@@ -86,5 +87,8 @@
 
     }
 
+    .nav-accueil {
+        color: white;
+    }
     
 }

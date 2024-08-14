@@ -28,8 +28,7 @@ const TableauDeBord = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem('email');
+        localStorage.removeItem("token");
         navigate('/connexion-admin');
         toast.success("Déconnexion avec succès");
     };
@@ -72,7 +71,7 @@ const TableauDeBord = () => {
 
 const removeEntreprise = async (id) => {
     try {
-        const response = await EntrepriseService.removeEntreprise(id)
+        await EntrepriseService.removeEntreprise(id)
         fetchEntreprises()
         toast.success("Entreprise supprimée")
     } catch (error) {
@@ -125,13 +124,14 @@ const removeEntreprise = async (id) => {
                 <div className='block-crud-formulaire'>
                     <h4 id='modifierentreprise'>Modifier / Remplacer une entreprise cliente</h4>
                     <label className="designation-champ" htmlFor="">NOM :</label>
-                    <input type="text" name="ent_nom" value={entrepriseAModifier.ent_nom} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }} />
+                    <input requir type="text" name="ent_nom" value={entrepriseAModifier.ent_nom} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }} />
                     <label className="designation-champ" htmlFor="">MOT DE PASSE :</label>
-                    <input type="password" name="ent_mdp" value={entrepriseAModifier.ent_mdp} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
+                    <input requir type="password" name="ent_mdp" value={entrepriseAModifier.ent_mdp} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
                     <label className="designation-champ" htmlFor="">DATE D'INSCRIPTION :</label>
-                    <input type="date" name="ent_date_inscription" value={entrepriseAModifier.ent_date_inscription} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
+                    <input requir type="date" name="ent_date_inscription" value={entrepriseAModifier.ent_date_inscription} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
+
                     <label className="designation-champ" htmlFor="">URL LOGO</label>
-                    <input type="text" name="ent_logo_url" value={entrepriseAModifier.ent_logo_url} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
+                    <input requir type="text" name="ent_logo_url" value={entrepriseAModifier.ent_logo_url} onChange={(e) => {setEntrepriseAModifier({...entrepriseAModifier, [e.target.name] : e.target.value}) }}  />
                     <label className="designation-champ" htmlFor=""></label>
                     <input className='button-formulaire' type="submit" value="Valider" onClick={updateEntreprise} />
                 </div>

@@ -36,9 +36,9 @@ const ConnexionAdministrateur = () => {
             <div id='formulaire-connexion-admin'>
                 <h2 id='sous-titre-admin'>ACCÈS ADMINISTRATEUR</h2>
                 <label htmlFor="">Administrateur</label>
-                <input required defaultValue={email} onChange={(e) => {setEmail(e.target.value)}} type="text" />
+                <input maxLength={20} required defaultValue={email} onChange={(e) => {setEmail(e.target.value)}} type="text" />
                 <label htmlFor="">Mot de passe </label>
-                <input required defaultValue={mdp} onChange={(e) => {setMdp(e.target.value)}} type="password" name="" id="" />
+                <input maxLength={15} required defaultValue={mdp} onChange={(e) => {setMdp(e.target.value)}} type="password" name="" id="" />
                 <input className="button"  onClick={() => {login()}} type="button" value="Connexion" />
             </div>
         </div>    

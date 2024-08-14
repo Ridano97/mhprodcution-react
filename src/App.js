@@ -11,6 +11,7 @@ import Unauthorized from './Utils/Unauthorized';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import AProposPage from './Pages/AProposPage';
+import ProtectedRoutesEntreprise from './Utils/ProtectedRoutesEntreprises';
 
 const App = () => {
     return (
@@ -18,18 +19,19 @@ const App = () => {
             <Routes>
                 <Route path='accueil' element={<AccueilPage />} />
                 <Route path='connexion-admin' element={<ConnexionAdministrateur />} />
-                <Route path='chantier' element={<ChantierPage />} />
-                <Route path='mariage' element={<MariagePage />} />
                 <Route path='connexion-suivichantier' element={<ConnexionSuiviChantierPage />} />
+                <Route path='mariage' element={<MariagePage />} />
                 <Route path='apropos' element={<AProposPage />} />
                 <Route path='unauthorized' element={<Unauthorized />} />
                 <Route element={<ProtectedRoutes />}>
                     <Route path='tableaudebord-administrateur' element={<TableauDeBord />} />
+                </Route>
+                <Route element={<ProtectedRoutesEntreprise/>}>
+                    <Route path='chantier' element={<ChantierPage />} />
                 </Route>
             </Routes>
             <ToastContainer position="top-right" autoClose={5000} />
         </BrowserRouter>
     );
 }
-
 export default App;

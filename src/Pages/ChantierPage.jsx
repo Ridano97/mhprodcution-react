@@ -17,17 +17,21 @@ const ChantierPage = () => {
 
 
     const [entreprises, setEntreprises] = useState([]);
-
+    const [showLinks, setShowLinks] = useState(false);
     const token = localStorage.getItem("token")
     const decoded = jwtDecode(token); /* decodé le token pour obtenir l'ID  */ 
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem('email');
+        localStorage.removeItem("token");
         navigate('/connexion-suivichantier');
         toast.success("Déconnexion avec succès");
     };
+
+    const handleShowLinks = () => {
+        setShowLinks(!showLinks)
+    }
+
 
     const fetchEntreprisesByID = async () => {
         const data = await EntrepriseService.getEntrepriseByID(decoded.id).then((response) => {
@@ -47,29 +51,32 @@ const ChantierPage = () => {
             <div> 
                 <a href="/accueil"><img src={LogoMHP} alt="logo" width={100} height={100}/></a>
             </div>
-            <nav className='stroke'>
-                <ul>
-                    <li><a href=''><span className='rubrique'>FILMS D'ENTREPRISES</span></a></li>
-                    <li><a href=''><span className='rubrique'>FILMS D'INDUSTRIES</span></a></li>
-                    <li><a href='/chantier'><span className='rubrique'>SUIVIS DE CHANTIER</span></a></li>
-                    <li><a href='/mariage'><span className='rubrique'>PRESTATIONS DE MARIAGES</span></a></li>
-                    <li><a href=''><span className='rubrique'>FILMS ARTISTIQUES</span></a></li>
-                    <li><a href=''><span className='rubrique'>PORTFOLIO</span></a></li>
-                    <li><a href='/apropos'><span className='rubrique'>À PROPOS</span></a></li>
+            <nav className={`stroke ${showLinks ? "show-nav" : "hide-nav"} `}>
+                <ul className='navbar_link'>
+                    <li className='item-list slideInDown-1'><a className='navbar-item' href=''><span className='rubrique'>FILMS D'ENTREPRISES</span></a></li>
+                    <li className='item-list slideInDown-2'><a className='navbar-item' href=''><span className='rubrique'>FILMS D'INDUSTRIES</span></a></li>
+                    <li className='item-list slideInDown-3'><a className='navbar-item' href='/chantier'><span className='rubrique'>SUIVIS DE CHANTIER</span></a></li>
+                    <li className='item-list slideInDown-4'><a className='navbar-item' href='/mariage'><span className='rubrique'>PRESTATIONS DE MARIAGES</span></a></li>
+                    <li className='item-list slideInDown-5'><a className='navbar-item' href=''><span className='rubrique'>FILMS ARTISTIQUES</span></a></li>
+                    <li className='item-list slideInDown-6'><a className='navbar-item' href=''><span className='rubrique'>PORTFOLIO</span></a></li>
+                    <li className='item-list slideInDown-7'><a className='navbar-item' href='/apropos'><span className='rubrique'>À PROPOS</span></a></li>
                 </ul>
+                <button onClick={handleShowLinks} className="navbar__burger">
+                        <span className="burger-bar"></span>
+                 </button>
             </nav>
         </div>
     </header> 
     <main id='main-conteneur'>
         <div id='status'>
-                <p id='etat'>Entreprise Professionnelle</p>
+                <p id='etatII'>Entreprise Professionnelle</p>
                 <button id='logoutII' onClick={handleLogout}>Déconnexion</button>
         </div>
         <div>
             <h1 id='titre-entreprise'>{entreprises?.ent_nom}</h1>
         </div>
         <div id='block-timelapse'>
-            <img src={TimeLapse} alt="photodecamerachantier" />
+            <img id='timelapse-screen' src={TimeLapse} alt="photodecamerachantier" />
         </div>
     </main>     
     <footer id='footerII'>
@@ -86,10 +93,10 @@ const ChantierPage = () => {
                         <div>
                             <nav className='stroke'>
                                 <ul id='conteneur-liste-footer'>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Mention légales</span></a></li>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Politique de confidentialité</span></a></li>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Gestion des cookies</span></a></li>
-                                    <li><a href='' target=''> <span className='navigation-footer'>Contact</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-chantier'>Mention légales</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-chantier'>Politique de confidentialité</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-chantier'>Gestion des cookies</span></a></li>
+                                    <li><a href='' target=''> <span className='navigation-chantier'>Contact</span></a></li>
                                 </ul>
                             </nav>
                         </div>

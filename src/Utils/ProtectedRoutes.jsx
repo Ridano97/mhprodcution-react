@@ -22,4 +22,4 @@ const ProtectedRoutes = () => {
     }
 };
 
-export default ProtectedRoutes;
+export default ProtectedRoutes; 
